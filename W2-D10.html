@@ -11,19 +11,20 @@
     <div>
         <h1>This is the last homework of the week</h1>
         <p> Short list with items:</p>
-        <ol>
+        <ul id ="list" dis>
             <li> first item</li>
             <li> second item</li>
             <li> third item</li>
-        </ol>
+        </ul><br>
+        <button onclick="emptyList()"> Empty the list</button>
     </div>
 
     <hr>
-    <div>
+    <div id= "container">
         <p> Short table</p>
         <p><a href="https://www.google.com/"> Click here to google </a>
         </p>
-        <table id="table">
+        <table id="table" >
             <tr>
                 <th>First name</th>
                 <th>Last name</th> 
@@ -35,7 +36,7 @@
                 <td>Ann</td>
                 <td>Smith 
                     <a  href="https://www.google.com/"> 
-                        <img  width="10px" height="10px" src="star.png" alt="star image" a href="google.com"> 
+                        <img  width="10px" height="10px" src="star.png" alt="star image" a href="google.com" > 
                     </a>
                 </td> 
                 <td>23</td>
@@ -84,21 +85,111 @@
                     </a>
                 </td> 
                 <td>18</td>
-                <td>Student
+                <td>Student 
                     <a  href="https://www.google.com/"> 
-                        <img  width="10px" height="10px" src="star.png" alt="star image" a href="google.com"> 
+                        <img  width="10px" height="10px" src="star.png" alt="star image" a href="google.com" > 
                     </a>
                 </td>
                 <td>Porto</td>
               </tr>
-            </table>
-        </table>
+            </table> <br>
+        <button onclick="hideImage()"> Hide all images</button><br><br>
+        <button onclick="showTable()"> Show Table</button><br><br>
+        <button onclick="hideTable()"> Hide Table</button><br><br>
+        
     </div>
-    <div id="footer">
-    
-</div>
+   
+<script>
+
+// 31) Get element with ID "container" from the page
+document.getElementById("container")
+
+// 32) Get every "td" from the page
+document.getElementsByTagName("td")
+
+// 33) Create a cycle that prints the text inside every td of the page
+
+const textOfCell = function (newText) {
+let cell = document.getElementsByTagName("td")
+for  (i=0; i< cell.length; i++) {
+    cell[i].innerText = newText
+}
+}
+// 34) Write a function to change the heading of the page
+
+const changeHeading = function (newHeading) {
+    let heading= document.getElementsByTagName("h1")[0]
+    heading.innerText = newHeading
+}
+// 35) Write a function to add an extra row to the table
+
+const addRow = function () {
+let rowTag = document.getElementsByTagName("tr")
+let newRow = document.createElement("newRow")
+newRow.appendChild(document.createTextNode("New Row"))
+rowTag.appendChild("newRow")
+}
+
+// 36) Write a function to add the class "test" to each row in the table
+
+const addClassToRow = function () {
+    let row = document.getElementsByTagName("tr")
+    for (i=0; i<row.length; i++) {
+        row[i].setAttribute("class", "test")
+    }
+}
+// 37) Write a function to add a red background to every link in the page
+
+const changeLink= function () {
+    let links = document.getElementsByTagName("a")
+    for (i=0; i<links.length; i++) {
+        links[i].style.backgroundColor = "red"
+    }
+}
+// 38) Console log "Page loaded" when the page is correctly loaded
+
+
+// window.onload = function(){ 
+//                 alert("Succesfully loaded");
+                
+// 39) Write a function to add new items to a UL
+const addNewItem= function () {
+let node = document.createElement("ol");                 
+let textnode = document.createTextNode("new item")       
+node.appendChild(textnode)                              
+document.getElementById("list").appendChild(node)    
+} 
+// 40) Write a function to empty a list
+const emptyList = function () {
+    let list = document.getElementsByTagName("li")
+    for (i=0; i<list.length; i++) {
+        list[i].innerText = ""
+    }
+}
+// 42) Add a button to hide every image on the page
+
+const hideImage = function () {
+    let images = document.getElementsByTagName("img")
+    for (i=0; i<images.length; i++) {
+        images[i].setAttribute("hidden", true)
+    }
+}
+// 42) Add a button to hide and show the table from the page
+let table = document.getElementById("table")
+
+const hideTable = function () {
+    table.setAttribute("hidden", true)
+    }
+const showTable = function () {
+    table.removeAttribute("hidden")
+
+}
+</script>
 </body>
-<footer>
-        Magdalena Kolaniak
-    </footer>
+<div id="footer">
+    <footer>
+     M K
+    </footer> 
+</div>
+
 </html>
