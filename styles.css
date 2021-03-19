@@ -1,0 +1,44 @@
+body {
+  width: 100%;
+  display: inline;
+  vertical-align: center;
+}
+
+#footer {
+  margin: 100px;
+  position: bottom;
+}
+h1 {
+  text-align: center;
+}
+a:link {
+  color: rgb(94, 10, 10);
+}
+a:visited {
+  color: rgb(27, 101, 50);
+}
+table {
+  margin-left: 10px;
+}
+tr {
+  border: 2px solid;
+  border-color: darkslategray;
+  border-radius: 5px;
+}
+td {
+  border-left: 2px dotted red;
+  border-right: 2px solid green;
+  border-top: 2px solid green;
+  border-bottom: 2px solid green;
+  border-radius: 5px;
+}
+p {
+  margin: 10px;
+}
+.changeSize {
+  font-size: 26px;
+  font-weight: bold;
+}
+.hideContent {
+  display: none;
+}
